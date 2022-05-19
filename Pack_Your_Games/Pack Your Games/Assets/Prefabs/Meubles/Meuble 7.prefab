@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1748265823750732124}
   - component: {fileID: 2962896175479288744}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Square
   m_TagString: ElementMeuble
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6707186340746736073}
   - component: {fileID: 6071354408560392978}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Square
   m_TagString: ElementMeuble
   m_Icon: {fileID: 0}
@@ -175,7 +175,7 @@ GameObject:
   - component: {fileID: 6277970636566468118}
   - component: {fileID: 842147023941265030}
   - component: {fileID: 807780744448947992}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Meuble 7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -251,7 +251,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3958033377816949772}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Grid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -286,7 +286,7 @@ GameObject:
   m_Component:
   - component: {fileID: 563122293768136343}
   - component: {fileID: 7820747116898231353}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Square
   m_TagString: ElementMeuble
   m_Icon: {fileID: 0}
@@ -368,7 +368,7 @@ GameObject:
   m_Component:
   - component: {fileID: 138675245592415478}
   - component: {fileID: 7463553927812046485}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Square
   m_TagString: ElementMeuble
   m_Icon: {fileID: 0}
