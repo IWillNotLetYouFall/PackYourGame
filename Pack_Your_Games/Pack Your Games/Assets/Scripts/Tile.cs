@@ -7,6 +7,17 @@ public class Tile : MonoBehaviour
     [SerializeField] private Color _baseColor, _offsetColor;
     [SerializeField] private SpriteRenderer _renderer;
     [SerializeField] private GameObject _highlight;
+    [SerializeField] private bool coveredState;
+
+    private void Awake()
+    {
+        coveredState = false;
+    }
+
+    public bool GetCoveredState()
+    {
+        return coveredState;
+    }
 
     public void Init(bool isOffset)
     {

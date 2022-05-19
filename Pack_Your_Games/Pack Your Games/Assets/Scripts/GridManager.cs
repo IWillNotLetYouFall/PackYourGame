@@ -11,9 +11,21 @@ public class GridManager : MonoBehaviour
 
     private Dictionary<Vector2, Tile> _tiles;
 
+    public int getWidth()
+    {
+        return _width;
+    }
+
+    public int getHeight()
+    {
+        return _height;
+    }
+
     private void Start()
     {
         GenerateGrid();
+        Debug.Log("Le score initial est de : " + GameManager.Instance.CountPoints());
+        
     }
 
     void GenerateGrid()
