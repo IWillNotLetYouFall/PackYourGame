@@ -93,7 +93,6 @@ GameObject:
   - component: {fileID: 5802784536597854583}
   - component: {fileID: 5802784536597854582}
   - component: {fileID: 5802784536597854577}
-  - component: {fileID: 5802784536597854576}
   m_Layer: 5
   m_Name: TestMeuble
   m_TagString: Untagged
@@ -162,18 +161,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvas: {fileID: 0}
   spriteRenderer: {fileID: 5802784536998035532}
---- !u!225 &5802784536597854576
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5802784536597854580}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &5802784536998035570
 GameObject:
   m_ObjectHideFlags: 0

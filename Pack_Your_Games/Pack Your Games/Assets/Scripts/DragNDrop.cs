@@ -19,7 +19,8 @@ public class DragNDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, 
     public void OnBeginDrag(PointerEventData enventData)
     {
         Debug.Log("OnBeginDrag");
-        spriteRenderer.color = new Color(1f, 1f, 1f, 0.85f);
+        if (spriteRenderer != null)
+            spriteRenderer.color = new Color(1f, 1f, 1f, 0.85f);
         boxCollider.enabled = false;
     }
 
@@ -32,7 +33,8 @@ public class DragNDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, 
     public void OnEndDrag(PointerEventData enventData)
     {
         Debug.Log("OnEndDrag");
-        spriteRenderer.color = new Color(1f, 1f, 1f, 1f);
+        if (spriteRenderer != null)
+            spriteRenderer.color = new Color(1f, 1f, 1f, 1f);
         boxCollider.enabled = true;
     }
 
