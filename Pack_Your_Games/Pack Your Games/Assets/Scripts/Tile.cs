@@ -33,4 +33,9 @@ public class Tile : MonoBehaviour
     {
         _highlight.SetActive(false);
     }
+
+    public void SwitchCoveredState()
+    {
+        coveredState = !coveredState;
+    }
 }
