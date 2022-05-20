@@ -18,4 +18,9 @@ public class Slot : MonoBehaviour, IDropHandler
     {
         Debug.Log("Collision " + this.name);
     }
+
+    void OnTriggerExit2D(Collider2D collider)
+    {
+        Debug.Log("Collision exit " + this.name);
+    }
 }
