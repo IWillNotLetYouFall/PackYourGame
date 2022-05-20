@@ -8,6 +8,7 @@ public class GridManager : MonoBehaviour
     [SerializeField] private int _width, _height;
     [SerializeField] private Tile _tilePrefab;
     [SerializeField] private Transform _cam;
+    [SerializeField] private Canvas canvas;
 
     private Dictionary<Vector2, Tile> _tiles;
 
@@ -35,8 +36,9 @@ public class GridManager : MonoBehaviour
         {
             for (int y = 0; y < _height; y++)
             {
-                var spawnedTile = Instantiate(_tilePrefab, new Vector3(x, y), Quaternion.identity);
+                var spawnedTile = Instantiate(_tilePrefab, new Vector3(x-7.5f, y-4), Quaternion.identity);
                 spawnedTile.name = $"Tile {x} {y}";
+                spawnedTile.transform.parent = canvas.transform;
 
                 var isOffset = (x % 2 == 0 && y % 2 != 0) || (x % 2 != 0 && y % 2 == 0);
                 spawnedTile.Init(isOffset);

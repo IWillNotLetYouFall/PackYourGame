@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5356803768216668388}
   - component: {fileID: 6363210102404733449}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: hightlight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 1690559900290091099}
   - component: {fileID: 3997338970262037288}
   - component: {fileID: 5277546821330512640}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Tile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -214,7 +214,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.97, y: 0.97}
   m_EdgeRadius: 0
 --- !u!50 &5277546821330512640
 Rigidbody2D:
