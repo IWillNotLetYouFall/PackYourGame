@@ -47,6 +47,6 @@ public class DragNDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, 
     public void isValid()
     {
         int coveredThisTile = GameManager.Instance.NumberCoveredThisTile();
-        GameManager.Instance.setValidMove(coveredThisTile == tileCases);
+        GameManager.Instance.SetValidMove(coveredThisTile == tileCases);
     }
 }

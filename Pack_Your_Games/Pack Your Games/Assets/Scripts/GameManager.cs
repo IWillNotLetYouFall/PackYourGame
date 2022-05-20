@@ -67,9 +67,12 @@ public class GameManager : MonoBehaviour
         return coveredThisTile;
     }
 
-    public void setValidMove(bool move)
+    public void SetValidMove(bool move)
     {
         instance.validMove = move;
+
+        // For debug's sake
+        EndTurn();
     }
 
     // The function to call when the player finishes to put a furniture on the grid
