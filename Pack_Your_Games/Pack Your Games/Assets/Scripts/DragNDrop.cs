@@ -7,9 +7,7 @@ public class DragNDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, 
 {
     [SerializeField] private Canvas canvas;
     [SerializeField] private SpriteRenderer spriteRenderer;
-    //[SerializeField] private int tileCases;
-    //[SerializeField] private GameManager gameManager;
-    //private bool valid;
+    [SerializeField] private int tileCases;
     private RectTransform rectTransform;
     private BoxCollider2D boxCollider;
 
@@ -46,12 +44,9 @@ public class DragNDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, 
         Debug.Log("OnPointerDown");
     }
 
-    /**public void isValid()
+    public void isValid()
     {
-        int coveredThisTile = gameManager.NumberCoveredThisTile();
-        valid = (coveredThisTile == tileCases);
-        Debug.Log("Valid = " + valid);
+        int coveredThisTile = GameManager.Instance.NumberCoveredThisTile();
+        GameManager.Instance.setValidMove(coveredThisTile == tileCases);
     }
-
-    public bool GetValid() {return valid;}*/
 }

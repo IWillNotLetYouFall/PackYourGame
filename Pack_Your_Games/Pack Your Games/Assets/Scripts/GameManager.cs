@@ -7,10 +7,12 @@ public class GameManager : MonoBehaviour
     private static GameManager instance;
     [SerializeField] private GridManager gridManager;
     private static int coveredLastTile;
+    private bool validMove;
 
     private void Awake()
     {
         instance = this;
+        instance.validMove = true;
         DontDestroyOnLoad(this.gameObject);
     }
 
@@ -63,5 +65,23 @@ public class GameManager : MonoBehaviour
         int coveredThisTile = covered - coveredLastTile;
         coveredLastTile = covered; //a faire au changement de tuile
         return coveredThisTile;
+    }
+
+    public void setValidMove(bool move)
+    {
+        instance.validMove = move;
+    }
+
+    // The function to call when the player finishes to put a furniture on the grid
+    public void EndTurn()
+    {
+        if (!instance.validMove)
+        {
+            Debug.Log("le move n'est pas valide !!!");
+        }
+        else
+        {
+            Debug.Log("le move est valide !");
+        }
     }
 }
