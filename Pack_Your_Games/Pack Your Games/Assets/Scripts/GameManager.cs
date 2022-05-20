@@ -48,7 +48,7 @@ public class GameManager : MonoBehaviour
 
     public int NumberCoveredThisTile()
     {
-        int covered = 0
+        int covered = 0;
         int gridWidth = gridManager.getWidth();
         int gridHeight = gridManager.getHeight();
 
