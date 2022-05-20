@@ -53,11 +53,13 @@ public class Tile : MonoBehaviour, IDropHandler
     {
         Debug.Log("Collision enter " + this.name);
         SwitchCoveredState();
+        //collider.gameObject.GetComponent<DragNDrop>().isValid();
     }
 
     void OnTriggerExit2D(Collider2D collider)
     {
         Debug.Log("Collision exit " + this.name);
         SwitchCoveredState();
+        //collider.gameObject.GetComponent<DragNDrop>().isValid();
     }
 }
