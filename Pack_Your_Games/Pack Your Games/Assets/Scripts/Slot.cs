@@ -13,4 +13,9 @@ public class Slot : MonoBehaviour, IDropHandler
                 enventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
         }
     }
+
+    void OnTriggerEnter2D(Collider2D collider)
+    {
+        Debug.Log("Collision " + this.name);
+    }
 }
