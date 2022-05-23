@@ -35,6 +35,11 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
     }
 
+    private void Start()
+    {
+        spawner.SpawnRandomBlock();
+    }
+
     private void Update()
     {
         if(Input.GetKeyDown(KeyCode.Space))
@@ -65,13 +70,9 @@ public class GameManager : MonoBehaviour
     public void PrintScore()
     {
         int coveredThisTile = NumberCovered() - coveredLastTile;
-        validMove = (coveredThisTile == thisTileCases);
-        
-        if(instance.validMove)
-        {
-            scoreCanva.gameObject.SetActive(true);
-            scoreText.text = CountPoints() + " pts";
-        }
+        Debug.Log(coveredThisTile);
+        scoreCanva.gameObject.SetActive(true);
+        scoreText.text = (CountPoints() - 20*coveredThisTile) + " pts";
     }
 
     private int NumberCovered()
