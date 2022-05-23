@@ -25,7 +25,7 @@ public class DragNDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, 
             spriteRenderer.color = new Color(1f, 1f, 1f, 0.85f);
         piece.DisableColliders();
 
-        GameManager.Instance.BeginTurn(tileCases);
+        GameManager.Instance.BeginTurn(tileCases, this);
     }
 
     public void OnDrag(PointerEventData enventData)

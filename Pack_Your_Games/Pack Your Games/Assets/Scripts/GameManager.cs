@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     private int coveredLastTile;
     private bool validMove;
     private int thisTileCases;
+    private DragNDrop currentDrag;
 
     public static GameManager Instance
     {
@@ -73,10 +74,11 @@ public class GameManager : MonoBehaviour
         return covered;
     }
     
-    public void BeginTurn(int numberTileCases)
+    public void BeginTurn(int numberTileCases, DragNDrop drag)
     {
         validMove = false;
         thisTileCases = numberTileCases;
+        currentDrag = drag;
     }
     // The function to call when the player finishes to put a furniture on the grid
     private void EndTurn()
@@ -94,6 +96,7 @@ public class GameManager : MonoBehaviour
             Debug.Log("le move est valide !");
             coveredLastTile = NumberCovered();
             spawner.SpawnRandomBlock();
+            currentDrag.enabled = false;
         }
     }
 
