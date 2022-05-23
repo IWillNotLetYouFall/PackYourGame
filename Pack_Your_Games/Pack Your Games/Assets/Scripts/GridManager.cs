@@ -9,6 +9,7 @@ public class GridManager : MonoBehaviour
     [SerializeField] private Tile _tilePrefab;
     [SerializeField] private Transform _cam;
     [SerializeField] private Canvas canvas;
+    [SerializeField] private Vector2 _gridOffset;
 
     private Dictionary<Vector2, Tile> _tiles;
 
@@ -31,12 +32,14 @@ public class GridManager : MonoBehaviour
 
     void GenerateGrid()
     {
+        float xOffset = ((float) _width - 1)/ 2;
+        float yOffset = ((float) _height - 1)/ 2;
         _tiles = new Dictionary<Vector2, Tile>();
         for (int x = 0; x < _width; x++)
         {
             for (int y = 0; y < _height; y++)
             {
-                var spawnedTile = Instantiate(_tilePrefab, new Vector3(x-7.5f, y-4), Quaternion.identity);
+                var spawnedTile = Instantiate(_tilePrefab, new Vector3(x - xOffset + _gridOffset.x, y - yOffset + _gridOffset.y), Quaternion.identity);
                 spawnedTile.name = $"Tile {x} {y}";
                 spawnedTile.transform.parent = canvas.transform;
 
@@ -47,7 +50,7 @@ public class GridManager : MonoBehaviour
             }
         }
 
-        _cam.transform.position = new Vector3((float)_width / 2 - 0.5f, (float)_height / 2 - 0.5f, -10);
+        _cam.transform.position = new Vector3((float)_width / 2 - 0.5f, (float)_height / 2 - 0.5f, -20);
     }
 
     public Tile GetTileAtPosition(Vector2 pos)
