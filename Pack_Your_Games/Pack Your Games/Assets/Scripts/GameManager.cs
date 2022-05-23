@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
     private static GameManager instance;
     [SerializeField] private GridManager gridManager;
     [SerializeField] private Spawner spawner;
+    [SerializeField] private Text scoreText;
+    [SerializeField] private Canvas scoreCanva;
     private int coveredLastTile;
     private bool validMove;
     private int thisTileCases;
@@ -57,6 +60,18 @@ public class GameManager : MonoBehaviour
         }
 
         return totScore;
+    }
+
+    public void PrintScore()
+    {
+        int coveredThisTile = NumberCovered() - coveredLastTile;
+        validMove = (coveredThisTile == thisTileCases);
+        
+        if(instance.validMove)
+        {
+            scoreCanva.gameObject.SetActive(true);
+            scoreText.text = CountPoints() + " pts";
+        }
     }
 
     private int NumberCovered()
