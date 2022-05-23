@@ -257,6 +257,7 @@ GameObject:
   - component: {fileID: 949330700543378335}
   - component: {fileID: 6736361026509589812}
   - component: {fileID: 6241473210656886241}
+  - component: {fileID: 8436004260954082810}
   m_Layer: 5
   m_Name: Meuble 15
   m_TagString: Untagged
@@ -324,6 +325,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvas: {fileID: 0}
   spriteRenderer: {fileID: 0}
+  tileCases: 4
+--- !u!114 &8436004260954082810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7212357995636114546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 203b0c883388f7f4c8ab45de8690e738, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colliders:
+  - {fileID: 6736361026509589812}
 --- !u!1 &7695890705717649154
 GameObject:
   m_ObjectHideFlags: 0

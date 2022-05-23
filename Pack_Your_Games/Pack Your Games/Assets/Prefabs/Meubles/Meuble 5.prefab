@@ -257,6 +257,7 @@ GameObject:
   - component: {fileID: 5425403854179672510}
   - component: {fileID: 6816968158174242095}
   - component: {fileID: 7319222698683861521}
+  - component: {fileID: 7305330435554625498}
   m_Layer: 5
   m_Name: Meuble 5
   m_TagString: Untagged
@@ -299,6 +300,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvas: {fileID: 0}
   spriteRenderer: {fileID: 1391577050643171025}
+  tileCases: 4
 --- !u!61 &7319222698683861521
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -325,6 +327,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.97, y: 1.97}
   m_EdgeRadius: 0
+--- !u!114 &7305330435554625498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7212357995636114546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 203b0c883388f7f4c8ab45de8690e738, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colliders:
+  - {fileID: 7319222698683861521}
 --- !u!1 &7695890705717649154
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,16 +8,16 @@ public class Tile : MonoBehaviour, IDropHandler
     [SerializeField] private Color _baseColor, _offsetColor;
     [SerializeField] private SpriteRenderer _renderer;
     [SerializeField] private GameObject _highlight;
-    [SerializeField] private bool coveredState;
+    [SerializeField] private int coveredStack;
 
     private void Awake()
     {
-        coveredState = false;
+        coveredStack = 0;
     }
 
     public bool GetCoveredState()
     {
-        return coveredState;
+        return coveredStack > 0;
     }
 
     public void Init(bool isOffset)
@@ -35,11 +35,6 @@ public class Tile : MonoBehaviour, IDropHandler
         _highlight.SetActive(false);
     }
 
-    public void SwitchCoveredState()
-    {
-        coveredState = !coveredState;
-    }
-
     public void OnDrop(PointerEventData enventData)
     {
         Debug.Log("OnDrop");
@@ -52,14 +47,13 @@ public class Tile : MonoBehaviour, IDropHandler
     void OnTriggerEnter2D(Collider2D collider)
     {
         Debug.Log("Collision enter " + this.name);
-        SwitchCoveredState();
-        //collider.gameObject.GetComponent<DragNDrop>().isValid();
+        coveredStack += 1;
+        //GameManager.Instance.IncrementCoveredThisTile();
     }
 
     void OnTriggerExit2D(Collider2D collider)
     {
         Debug.Log("Collision exit " + this.name);
-        SwitchCoveredState();
-        //collider.gameObject.GetComponent<DragNDrop>().isValid();
+        coveredStack -= 1;
     }
 }

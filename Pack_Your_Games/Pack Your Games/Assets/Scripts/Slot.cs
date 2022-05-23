@@ -1,4 +1,4 @@
-using System.Collections;
+/*using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -17,12 +17,13 @@ public class Slot : MonoBehaviour, IDropHandler
     void OnTriggerEnter2D(Collider2D collider)
     {
         Debug.Log("Collision " + this.name);
-        //collider.gameObject.GetComponent<DragNDrop>().isValid();
+        collider.gameObject.GetComponent<DragNDrop>().isValid();
     }
 
     void OnTriggerExit2D(Collider2D collider)
     {
         Debug.Log("Collision exit " + this.name);
-        //collider.gameObject.GetComponent<DragNDrop>().isValid();
+        collider.gameObject.GetComponent<DragNDrop>().isValid();
     }
 }
+*/

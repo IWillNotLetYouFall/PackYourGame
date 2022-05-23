@@ -3,18 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
+[RequireComponent(typeof(Piece))]
 public class DragNDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler
 {
-    [SerializeField] private Canvas canvas;
+    public Canvas canvas;
     [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private int tileCases;
     private RectTransform rectTransform;
-    private BoxCollider2D boxCollider;
+    private Piece piece;
 
     private void Awake()
     {
         rectTransform = GetComponent<RectTransform>();
-        boxCollider = GetComponent<BoxCollider2D>();
+        piece = GetComponent<Piece>();
     }
 
     public void OnBeginDrag(PointerEventData enventData)
@@ -22,7 +23,9 @@ public class DragNDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, 
         Debug.Log("OnBeginDrag");
         if (spriteRenderer != null)
             spriteRenderer.color = new Color(1f, 1f, 1f, 0.85f);
-        boxCollider.enabled = false;
+        piece.DisableColliders();
+
+        GameManager.Instance.BeginTurn(tileCases);
     }
 
     public void OnDrag(PointerEventData enventData)
@@ -36,17 +39,11 @@ public class DragNDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, 
         Debug.Log("OnEndDrag");
         if (spriteRenderer != null)
             spriteRenderer.color = new Color(1f, 1f, 1f, 1f);
-        boxCollider.enabled = true;
+        piece.EnableColliders();
     }
 
     public void OnPointerDown(PointerEventData enventData)
     {
         Debug.Log("OnPointerDown");
-    }
-
-    public void isValid()
-    {
-        int coveredThisTile = GameManager.Instance.NumberCoveredThisTile();
-        GameManager.Instance.SetValidMove(coveredThisTile == tileCases);
     }
 }

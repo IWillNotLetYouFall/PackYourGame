@@ -6,15 +6,10 @@ public class GameManager : MonoBehaviour
 {
     private static GameManager instance;
     [SerializeField] private GridManager gridManager;
-    private static int coveredLastTile;
+    [SerializeField] private Spawner spawner;
+    private int coveredLastTile;
     private bool validMove;
-
-    private void Awake()
-    {
-        instance = this;
-        instance.validMove = true;
-        DontDestroyOnLoad(this.gameObject);
-    }
+    private int thisTileCases;
 
     public static GameManager Instance
     {
@@ -26,6 +21,21 @@ public class GameManager : MonoBehaviour
             }
 
             return instance;
+        }
+    }
+
+    private void Awake()
+    {
+        instance = this;
+        instance.validMove = true;
+        DontDestroyOnLoad(this.gameObject);
+    }
+
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            EndTurn();
         }
     }
 
@@ -48,12 +58,11 @@ public class GameManager : MonoBehaviour
         return totScore;
     }
 
-    public int NumberCoveredThisTile()
+    private int NumberCovered()
     {
         int covered = 0;
         int gridWidth = gridManager.getWidth();
         int gridHeight = gridManager.getHeight();
-
         for (int i = 0; i < gridWidth; i++)
         {
             for (int j = 0; j < gridHeight; j++)
@@ -61,23 +70,21 @@ public class GameManager : MonoBehaviour
                 if (gridManager.GetTileAtPosition(new Vector2(i, j)).GetCoveredState()) covered += 1;
             }
         }
-
-        int coveredThisTile = covered - coveredLastTile;
-        coveredLastTile = covered; //a faire au changement de tuile
-        return coveredThisTile;
+        return covered;
     }
-
-    public void SetValidMove(bool move)
+    
+    public void BeginTurn(int numberTileCases)
     {
-        instance.validMove = move;
-
-        // For debug's sake
-        EndTurn();
+        validMove = false;
+        thisTileCases = numberTileCases;
     }
-
     // The function to call when the player finishes to put a furniture on the grid
-    public void EndTurn()
-    {
+    private void EndTurn()
+    {  
+        int coveredThisTile = NumberCovered() - coveredLastTile;
+        validMove = (coveredThisTile == thisTileCases);
+        Debug.Log("CoveredThisTile " + coveredThisTile + " TileCases " + thisTileCases);
+        
         if (!instance.validMove)
         {
             Debug.Log("le move n'est pas valide !!!");
@@ -85,6 +92,9 @@ public class GameManager : MonoBehaviour
         else
         {
             Debug.Log("le move est valide !");
+            coveredLastTile = NumberCovered();
+            spawner.SpawnRandomBlock();
         }
     }
+
 }
