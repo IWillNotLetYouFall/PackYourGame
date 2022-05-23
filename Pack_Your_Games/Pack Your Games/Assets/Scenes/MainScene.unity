@@ -417,15 +417,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5434043973344491102, guid: b4cc3194b143cbf48ada41b060d4d312, type: 3}
       propertyPath: m_LocalScale.x
-      value: 50
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 5434043973344491102, guid: b4cc3194b143cbf48ada41b060d4d312, type: 3}
       propertyPath: m_LocalScale.y
-      value: 50
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 5434043973344491102, guid: b4cc3194b143cbf48ada41b060d4d312, type: 3}
       propertyPath: m_LocalScale.z
-      value: 50
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 5434043973344491102, guid: b4cc3194b143cbf48ada41b060d4d312, type: 3}
       propertyPath: m_LocalPosition.x
@@ -533,7 +533,7 @@ MonoBehaviour:
   - {fileID: 7212357995636114546, guid: be151b819f8db9b4e86738263dc190e1, type: 3}
   - {fileID: 7212357995636114546, guid: cc9c36c2e9b2b0e4da2adb994a3d496c, type: 3}
   spawnPosition: {x: -350, y: -21, z: -3973.6}
-  scale: {x: 50, y: 50, z: 50}
+  scale: {x: 60, y: 60, z: 60}
   canvas: {fileID: 1416949745}
 --- !u!4 &1059230787
 Transform:
